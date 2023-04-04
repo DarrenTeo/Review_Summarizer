@@ -14,8 +14,12 @@ st.title("Reviews Summarizer")
 
 col1, col2 = st.columns(2, gap="large")
 
-df = pd.read_csv('nyka_top_brands_cosmetics_product_reviews.csv')
-product_df = pd.read_csv('nyka_popular_brands_products_2022_10_16.csv')
+# df = pd.read_csv('nyka_top_brands_cosmetics_product_reviews.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/DarrenTeo/Review_Summarizer/main/nyka_top_brands_cosmetics_product_reviews.csv')
+
+# product_df = pd.read_csv('nyka_popular_brands_products_2022_10_16.csv')
+product_df = pd.read_csv('https://raw.githubusercontent.com/DarrenTeo/Review_Summarizer/main/nyka_popular_brands_products_2022_10_16.csv')
+
 fact_df = pd.merge(df, product_df[['product_id', 'image_url']], how='left', on=['product_id'])
 
 #################  
