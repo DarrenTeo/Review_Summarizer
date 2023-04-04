@@ -4,3 +4,4 @@ numpy
 sumy
 wordcloud
 matplotlib
+nltk
