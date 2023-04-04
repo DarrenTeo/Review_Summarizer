@@ -5,3 +5,4 @@ sumy
 wordcloud
 matplotlib
 nltk
+plotly
