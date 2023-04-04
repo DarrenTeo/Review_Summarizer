@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+nltk
+sumy
+re
+wordcloud
+matplotlib
