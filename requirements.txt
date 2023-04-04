@@ -5,3 +5,4 @@ nltk
 sumy
 wordcloud
 matplotlib
+punkt
