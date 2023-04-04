@@ -64,13 +64,29 @@ with st.sidebar:
             selected_product =  product_container.multiselect("Select Product",
                 product_list,default=479)
             
+        ##############
+        ### Rating ###
+        ##############
+        
+        rating_list = fact_df['review_rating'].dropna().sort_values(ascending=True).unique()
+        all_rating = st.checkbox("Select All Rating",key='rating_checkbox')
+        rating_container = st.container()
+
+        if all_rating:
+            selected_rating = rating_container.multiselect("Select Rating",
+                 rating_list,rating_list)
+        else:
+            selected_rating =  rating_container.multiselect("Select Rating",
+                rating_list,default=5)
+            
 with col1:
         
     ########################
     ### DF after Filters ###
     ########################
     st.session_state['fact_df'] = fact_df[(fact_df.brand_name.isin(selected_brand))&
-                                          (fact_df.product_id.isin(selected_product))
+                                          (fact_df.product_id.isin(selected_product))&
+                                          (fact_df.review_rating.isin(selected_rating))
                                          ]
 
     st.subheader('Selected Product')
@@ -81,7 +97,7 @@ with col1:
 
     st.subheader('Preview of Selected Reviews ')
     total_reviews = len(st.session_state.fact_df['review_text'])
-    number_of_reviews = st.slider("Review", min_value=0, max_value=total_reviews, value=[0,100], step=1)
+    number_of_reviews = st.slider("Review", min_value=0, max_value=total_reviews, value=[0,5], step=1)
 
     st.write("Total Reviews Selected",number_of_reviews[1]-number_of_reviews[0])
 
