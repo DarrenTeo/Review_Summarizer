@@ -29,7 +29,7 @@ dataset = st.file_uploader(label = '')
 
 use_defo = st.checkbox('Use example Dataset')
 if use_defo:
-    dataset = 'nyka_top_brands_cosmetics_product_reviews.csv'
+    dataset = 'https://raw.githubusercontent.com/DarrenTeo/Review_Summarizer/main/nyka_top_brands_cosmetics_product_reviews.csv'
 
 st.sidebar.header('Import Dataset to Use Available Features: 👉')
 
