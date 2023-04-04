@@ -8,6 +8,8 @@ from sumy.summarizers.lex_rank import LexRankSummarizer
 import re
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import nltk
+nltk.download('punkt')
 
 st.set_page_config(layout="wide")
 st.title("Reviews Summarizer")
